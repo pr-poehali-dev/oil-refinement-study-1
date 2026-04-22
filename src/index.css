@@ -34,14 +34,14 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
 
     /* Academic palette */
-    --paper: #fdfaf5;
-    --ink: #1a1a1a;
-    --ink-light: #4a4a4a;
-    --ink-muted: #7a7a7a;
-    --rule: #c8bfaa;
-    --rule-heavy: #8a7d6a;
-    --accent-gold: #8b6914;
-    --page-shadow: rgba(0, 0, 0, 0.12);
+    --paper: #ffffff;
+    --ink: #111111;
+    --ink-light: #3a3a3a;
+    --ink-muted: #6a6a6a;
+    --rule: #d0d0d0;
+    --rule-heavy: #888888;
+    --accent-gold: #1a3a6b;
+    --page-shadow: rgba(0, 0, 0, 0.1);
   }
 
   .dark {
@@ -82,7 +82,7 @@
 
   body {
     @apply bg-background text-foreground;
-    background-color: #e8e0d0;
+    background-color: #e0e0e0;
     font-family: "IBM Plex Sans", sans-serif;
   }
 }

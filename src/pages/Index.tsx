@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Icon from "@/components/ui/icon";
+import { generateDocx } from "@/lib/generateDocx";
 
 const chapters = [
   { id: "cover", label: "Титульный лист", short: "Титул" },
@@ -78,7 +79,7 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen" style={{ background: "#ddd5c4" }}>
+    <div className="min-h-screen" style={{ background: "#e0e0e0" }}>
       {/* Top bar */}
       <header
         className="no-print fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 border-b"
@@ -100,14 +101,24 @@ export default function Index() {
             Продукты нефтепереработки
           </span>
         </div>
-        <button
-          onClick={() => window.print()}
-          className="flex items-center gap-2 px-3 py-1.5 rounded text-xs font-sans-academic font-medium transition-all hover:opacity-90"
-          style={{ background: "var(--accent-gold)", color: "white" }}
-        >
-          <Icon name="Printer" size={13} />
-          Печать / PDF
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => generateDocx()}
+            className="flex items-center gap-2 px-3 py-1.5 rounded text-xs font-sans-academic font-medium transition-all hover:opacity-90"
+            style={{ background: "#1a5276", color: "white" }}
+          >
+            <Icon name="FileDown" size={13} />
+            Скачать Word
+          </button>
+          <button
+            onClick={() => window.print()}
+            className="flex items-center gap-2 px-3 py-1.5 rounded text-xs font-sans-academic font-medium transition-all hover:opacity-90"
+            style={{ background: "#444", color: "white" }}
+          >
+            <Icon name="Printer" size={13} />
+            Печать / PDF
+          </button>
+        </div>
       </header>
 
       <div className="flex pt-[48px]">
@@ -115,7 +126,7 @@ export default function Index() {
         {sidebarOpen && (
           <aside
             className="no-print fixed left-0 top-[48px] bottom-0 w-56 overflow-y-auto border-r z-40"
-            style={{ background: "#f5f0e8", borderColor: "#c8bfaa" }}
+            style={{ background: "#f4f4f4", borderColor: "#d0d0d0" }}
           >
             <div className="p-4">
               <div
